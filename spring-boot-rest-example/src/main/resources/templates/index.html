@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+</head>
+<body>
+<div th:switch="${users}">
+<h2 th:case="null">No Users found.</h2>
+
+<div th:case="*">
+	<h2>Users</h2>
+	
+	<table border="1">
+		<thead>
+			<th>Id</th>
+			<th>Name</th>
+			<th>Email</th>
+		</thead>
+		
+		<tbody>
+			<tr th:each="user : ${users}">
+			<td th:text="${user.id}"></td>
+			<td th:text="${user.name}"></td>
+			<td th:text="${user.email}"></td>
+			</tr>
+		</tbody>
+	</table>
+
+</div>
+
+
+
+</div>
+	
+
+
+</body>
+
+</html>
+
